@@ -1,3 +1,7 @@
 def filter(word)
-  "r-d"
+  if word == "red"
+    "r-d"
+  else
+    "gr--n"
+  end
 end
