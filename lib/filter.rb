@@ -1,9 +1,7 @@
 def filter(word)
-  if word == "red"
-    "r-d"
-  elsif word == "green"
-    "gr--n"
-  else
-    "bl--"
-  end
+  if word.match(/red|blue|green|yellow/i)
+  word.gsub(/[aeiou]/i, '-')
+else
+  word
+end
 end
