@@ -39,11 +39,31 @@ end
     it 'returns "covered" when given covered' do
       expect(filter("covered")).to eq("covered")
     end
+
+    it 'returns "evergreen" when given "evergreen"' do
+      expect(filter("evergreen")).to eq("evergreen")
+    end
+
+    it 'returns "blues" when given "blues"' do
+      expect(filter("blues")).to eq("blues")
+    end
+
+    it 'returns "coloured" when given "coloured"' do
+      expect(filter("coloured")).to eq("coloured")
+    end
+
+    it 'returns "greenbelt" when given "greenbelt"' do
+      expect(filter("greenbelt")).to eq("greenbelt")
+    end
   end
 
   context 'it replaces bad words when they are integrated into another word' do
     it 'returns "outnumber-d" when given "outnumbered"' do
       expect(filter("outnumbered")).to eq("outnumber-d")
+    end
+
+    it 'returns "they br-d cows" when given "they br-d cows"' do
+      expect(filter("they bred cows")).to eq("they br-d cows") 
     end
   end
 end
