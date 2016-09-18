@@ -17,11 +17,18 @@ describe "filter" do
   it 'returns "yellow" when given yellow' do
     expect(filter("yellow")).to eq("y-ll-w")
   end
+
+  it 'returns "y-ll-w gr--n bl-- r-d" when given "yellow green blue red"' do
+    expect(filter("yellow green blue red")).to eq("y-ll-w gr--n bl-- r-d")
+  end
 end
 
   context "it does not replace the vowels for words that are not bad" do
     it 'returns "black" when given "black"' do
       expect(filter("black")).to eq("black")
+    end
+    it 'returns "this is a test" when given "this is a test"' do
+      expect(filter("this is a test")).to eq("this is a test")
     end
   end
 
@@ -63,7 +70,7 @@ end
     end
 
     it 'returns "they br-d cows" when given "they br-d cows"' do
-      expect(filter("they bred cows")).to eq("they br-d cows") 
+      expect(filter("they bred cows")).to eq("they br-d cows")
     end
   end
 end
