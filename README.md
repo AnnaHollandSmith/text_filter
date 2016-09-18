@@ -43,7 +43,7 @@ filter("red is my favourite colour")
 ```
 ## Tests:
 
-To run tests (exit from IRB) you will need to have RSpec installed. If you do not already, you can install this by running:
+To run tests (you will need to have exited from IRB) you will need to have RSpec installed. If you do not already, you can install this by running:
 ```
 bundle install rspec  
 ```
