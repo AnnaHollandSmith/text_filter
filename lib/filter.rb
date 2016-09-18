@@ -1,7 +1,7 @@
 def filter(word)
-  if word.match(/red|blue|green|yellow/i)
-  word.gsub(/[aeiou]/i, '-')
-else
-  word
-end
+  if word =~ /red|green|blue|yellow/i && word !~ /covered|coloures|evergreen|blues|greenbelt/i
+    word.gsub(/red/i, 'r-d').gsub(/blue/i, 'bl--').gsub(/green/i, 'gr--n').gsub(/yellow/i, 'y-ll-w')
+  else
+    word
+  end
 end
