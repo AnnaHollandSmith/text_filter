@@ -1,7 +1,7 @@
 require "filter"
 
 describe "filter" do
-  context "it replaces the vowels of bad words with dashes" do
+  context "it replaces the vowels of banned words with dashes" do
   it 'returns "r-d" when given "red"' do
     expect(filter("red")).to eq("r-d")
   end
@@ -23,22 +23,23 @@ describe "filter" do
   end
 end
 
-  context "it does not replace the vowels for words that are not bad" do
+  context "it does not replace the vowels for words that are not banned" do
     it 'returns "black" when given "black"' do
       expect(filter("black")).to eq("black")
     end
+
     it 'returns "this is a test" when given "this is a test"' do
       expect(filter("this is a test")).to eq("this is a test")
     end
   end
 
-  context "it replaces the vowels of only bad words in a string" do
+  context "it filters only banned words in a string that contains a banned word" do
     it 'returns "this is r-d" when given "this is red"' do
       expect(filter("this is red")).to eq("this is r-d")
     end
 
-    it 'returns "r-d and gr--n are bad" when given "red and green are bad"' do
-      expect(filter("red and green are bad")).to eq("r-d and gr--n are bad")
+    it 'returns "r-d and gr--n are banned" when given "red and green are banned"' do
+      expect(filter("red and green are banned")).to eq("r-d and gr--n are banned")
     end
   end
 
