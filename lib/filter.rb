@@ -5,3 +5,14 @@ def filter(word)
     word
   end
 end
+
+
+#An alternative syntax for the same method would be:
+
+# def filter(word)
+#   if word !~ /covered|coloured|evergreen|blues|greenbelt/i
+#     word.gsub(/red|green|blue|yellow/i,'red' => 'r-d', 'green' => 'gr--n', "blue" => "bl--", "yellow" => "y-ll-w")
+#   else
+#     word
+#   end
+# end
