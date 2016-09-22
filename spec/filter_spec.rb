@@ -45,8 +45,11 @@ end
 
   context(" it filters banned and exception words appropriately within a given string") do
     it 'returns "r-d and gr--n covered" when given "red and green covered"' do
-    expect(filter("red and green covered")).to eq("r-d and gr--n covered")
-  end
+      expect(filter("red and green covered")).to eq("r-d and gr--n covered")
+    end
+    it 'returns "r-d and bl-- coloured blues outnumber-d" when given "red and blue coloured blues outnumbered"' do
+      expect(filter("red and blue coloured blues outnumbered")).to eq("r-d and bl-- coloured blues outnumber-d")
+    end
   end
 
   context "there are exceptions for which banned words must not be filtered" do
