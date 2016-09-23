@@ -52,6 +52,12 @@ end
     end
   end
 
+  context("it is case insensitive") do
+    it "returns R-D when given RED" do
+      expect(filter("RED")).to eq("r-d")
+    end
+  end
+
   context "there are exceptions for which banned words must not be filtered" do
     it 'returns "covered" when given covered' do
       expect(filter("covered")).to eq("covered")
