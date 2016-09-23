@@ -1,6 +1,5 @@
-
 def filter(word)
-    word.gsub(/red|/i, 'r-d').gsub(/blue/i, 'bl--').gsub(/green/i, 'gr--n')
+    word.gsub(/red/i, 'r-d').gsub(/blue/i, 'bl--').gsub(/green/i, 'gr--n')
     .gsub(/yellow/i, 'y-ll-w').gsub(/cover-d/i, 'covered').gsub(/colour-d/i, 'coloured')
     .gsub(/evergr--n/i, 'evergreen').gsub(/gr--nbelt/i, 'greenbelt').gsub(/bl--s/i, 'blues')
 end
