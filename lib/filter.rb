@@ -1,8 +1,17 @@
 def filter(word)
+  exceptions = {  'colour-d' => 'coloured',
+                  'evergr--n' => 'evergreen',
+                  'bl--s' => 'blues',
+                  'cover-d' => 'covered',
+                  'gr--nbelt' => 'greenbelt'}
+
     word.gsub(/red/i, 'r-d').gsub(/blue/i, 'bl--').gsub(/green/i, 'gr--n')
-    .gsub(/yellow/i, 'y-ll-w').gsub(/cover-d/i, 'covered').gsub(/colour-d/i, 'coloured')
-    .gsub(/evergr--n/i, 'evergreen').gsub(/gr--nbelt/i, 'greenbelt').gsub(/bl--s/i, 'blues')
+    .gsub(/yellow/i, 'y-ll-w').gsub(/coloured|cover-d|evergr--n|bl--s|gr--nbelt/i, exceptions )
 end
+
+
+
+
 
 # Original syntax prior to edgecase was:
 #
@@ -19,4 +28,3 @@ end
 # word.gsub(/red|greenbelt|green|blues|blue|yellow|coloured|evergreen|covered|greenbelt/i, sanitised_word)
 #
 #
-# end
